@@ -1,0 +1,104 @@
+.sidebar
+	grid-area: sidebar
+
+.main
+	grid-template-areas: "breadcrumbs breadcrumbs" "sidebar content"
+	grid-template-columns: 185px 1fr
+	display: grid
+	grid-column-gap: 20px
+	+md
+		grid-template-areas: "breadcrumbs" "sidebar" "content"
+		grid-template-columns: 1fr
+		grid-row-gap: 20px
+
+.content
+	grid-area: content
+
+.text
+	font-size: 0
+	margin-bottom: 200px
+	+md
+		margin-bottom: 120px
+	+sm
+		margin-bottom: 80px
+	+xs
+		margin-bottom: 0
+.text__row
+	margin-left: -20px
+	margin-right: -20px
+	+md
+		margin-left: 0
+		margin-right: 0
+.text__col
+	width: 50%
+	display: inline-block
+	vertical-align: top
+	padding: 0 20px
+	+md
+		width: 100%
+		padding: 20px 0 0 0
+	p
+		color: $grayLink
+		font-size: $base
+
+.products
+	margin-bottom: 20px
+	font-size: 0
+	display: grid
+	grid-gap: 20px 14px
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))
+	+sm
+		padding-left: 0
+	+r(480)
+		margin-bottom: 10px
+	&_second
+		grid-area: products_second
+	.product
+		&__img
+			display: block
+			text-decoration: none
+			img
+				max-width: 100%
+				height: auto
+				width: 100%
+		&__inner
+			background-color: $gray
+			padding: 20px
+		&__text
+			font-size: $font-md
+			color: $grayLink
+			font-weight: 400
+			line-height: 1
+			display: block
+			text-decoration: none
+			height: 3em
+			overflow: hidden
+			margin-top: 20px
+			&:hover
+				text-decoration: underline
+			+xs
+				font-size: 14px
+		&__controls
+			margin-top: 32px
+			display: flex
+			align-items: center
+			justify-content: space-between
+		&__price
+			font-size: $font-lg
+			color: $grayMid
+			line-height: 1
+			letter-spacing: 0.025em
+			font-weight: 700
+			text-decoration: none
+			+xs
+				font-size: 22px
+			+r(480)
+				font-size: 18px
+		&__basket
+			margin-right: 18px
+			text-decoration: none
+			cursor: pointer
+			+r(668)
+				margin-right: 0
+			&-icon
+				display: block
