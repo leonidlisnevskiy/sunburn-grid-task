@@ -24,7 +24,8 @@ block content
 	// END .slider
 
 	// BEGIN .main
-	main(class="main inner")
+	main(class="main")
+		.inner.main_inner
 			-
 				var breadcrumbs = [
 				{breadcrumb: 'Главная'},
@@ -89,3 +90,26 @@ block content
 							p Одним из основных направлений работ нашей компании является поисковое продвижение сайтов, на данной момент мы работаем с более чем 150 постоянными клиентами по более чем 11 000  запросам. При этом в работе основной акцент мы делаем на качестве работ, а так же применяем собственные уникальные разработки в области SEO продвижения. На данный момент отдел SEO состоит из 9 человек под руководством ведущего специалиста, преимущественно работающих в нашем московском офисе.
 				// END .text
 	// END .main
+
+	// BEGIN .footer
+	footer(class="footer")
+		.inner
+			.row
+				- var menuLink = [ {link: 'Главная'}, {link: 'Каталог'}, {link: 'Доставка и оплата'}, {link: 'Прайс-лист'}, {link: 'Контакты'}]
+				.col
+					ul.menu.menu_footer
+						each item in menuLink
+							li.menu__item
+								a.menu__link(href="#")
+									=item.link
+
+				.col
+					.logo.footer_logo
+						+iconPng('logo-footer footer_logo-icon')
+						a(href="#" class="footer_logo-title") Разработка сайта
+						span(class="footer_logo-meta") компания «Пиксель Плюс»
+
+				.col.col_copy
+					p(class="footer__copy") © 2012–2013 ЗАО «Компания»
+						a(href="mailto:info@name.ru") info@name.ru
+	// END .footer
